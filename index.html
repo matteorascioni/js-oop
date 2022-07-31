@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Js OOP</title>
+    </head>
+    <body>
+        <h1>A little OOP Js script</h1>
+    </body>
+    <script>
+        class Person {
+            constructor(name, lastname, age, gender, hobbies) {
+                this.name = name;
+                this.lastname = lastname;
+                this.age = age;
+                this.gender = gender;
+                this.hobbies = hobbies;
+            }
+
+            greetings() {
+                console.log(`Hi I am ${this.name}`);
+            }
+        };
+
+        const person = new Person('Jenny', 'Doe', 29, 'Female', ['Books'],);
+        person.greetings();
+
+        class Teacher extends Person {
+            constructor(name, lastname, age, gender, hobbies, subjectOfTeaching) {
+                super(name, lastname, age, gender, hobbies,);
+
+                this.subjectOfTeaching = subjectOfTeaching;   
+            }
+
+            get subjectOfTeaching() {
+                return this._subjectOfTeaching;
+            }
+
+            set subjectOfTeaching(newSubjectOfTeaching) {
+                this._subjectOfTeaching = newSubjectOfTeaching;
+            }
+
+            scoldsPupil(pupilName) {
+                console.log(`${pupilName} don't eat in class!`);
+            };
+        };
+
+        const teacher = new Teacher('John', 'Doe', 32, 'Male', ['Netflix'], 'Software Engineering');
+
+        teacher.subjectOfTeaching  = 'Math';
+        console.log(teacher.subjectOfTeaching);
+        
+        scoldsPupil(teacher.pupilName = 'Seth');
+    </script>
+</html>
